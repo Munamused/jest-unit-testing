@@ -48,3 +48,34 @@ test('Testing div infinity -- success', () => {
 });
 
 //|------------------------------ Testing for containsNumbers ------------------------------|
+
+test('Testing containsNumbers has nums -- success', () => {
+  const expected = true;
+  const got = mut.containsNumbers('whatthe89!');
+  expect(got).toBe(expected);
+});
+
+test('Testing containsNumbers no nums -- success', () => {
+  const expected = false;
+  const got = mut.containsNumbers('whatthe!');
+  expect(got).toBe(expected);
+});
+
+test('Testing containsNumbers only nums -- success', () => {
+  const expected = true;
+  const got = mut.containsNumbers('839279234');
+  expect(got).toBe(expected);
+});
+
+test('Testing containsNumbers invalid input -- success', () => { // this is the bug?
+  const expected = false; 
+  const got = mut.containsNumbers(99);
+  expect(got).toBe(expected);
+});
+
+test('Testing containsNumbers empty string -- success', () => {
+  const expected = false;
+  const got = mut.containsNumbers('');
+  expect(got).toBe(expected);
+});
+
